@@ -1,0 +1,28 @@
+{
+  "name": "spa",
+  "version": "1.0.0",
+  "description": "spa on javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run open",
+    "open": "concurrently \"http-server -a localhost -p 1234\" \"open http://localhost:1234/build\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ivan1906/spa.git"
+  },
+  "keywords": [
+    "spa",
+    "javascript"
+  ],
+  "author": "Yanik Ivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ivan1906/spa/issues"
+  },
+  "homepage": "https://github.com/Ivan1906/spa#readme",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "http-server": "^0.11.1"
+  }
+}
