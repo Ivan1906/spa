@@ -1,0 +1,17 @@
+li {
+  margin: 5px 0;
+  
+}
+
+a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+p {
+  text-align: justify;
+}
+
+#recommendation {
+  margin-left: 20px;
+}
