@@ -20,11 +20,22 @@ export default class ListVideo extends Container {
   }
 
   render(movies) {
-    let list = movies
-      .map(movie => `<li><a data-id="${movie.id}" data-type="${movie.type}">${movie.title}</a></li>`)
-      .join(' ');
+    let html = '';
+    if (movies != null) {
+      if (movies.length != 0) {
+        let list = recommends
+          .map(recom => `<li><a data-id="${recom.id}">${recom.title}</a></li>`)
+          .join(' ');
+        html = `<ul>${list}</ul>`;
+      } else {
+        html = '<p>За веденим параметром результату не має</p>'
+      }
+
+    } else {
+      html = '<h1>Виникла помилка при отриманні інформації.</h1>';
+    }
     this
       .$el
-      .insertAdjacentHTML('afterbegin', `<ul>${list}</ul>`);
+      .insertAdjacentHTML('afterbegin', html);
   }
 }

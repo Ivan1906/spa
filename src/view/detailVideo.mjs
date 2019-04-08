@@ -9,12 +9,16 @@ export default class DetailVideo extends Container {
   renderRecom(recommends) {
     let html = '';
     if (recommends != null) {
-      let list = recommends
-        .map(recom => `<li><a data-id="${recom.id}">${recom.title}</a></li>`)
-        .join(' ');
-      html = `<ul>${list}</ul>`;
+      if (recommends.length != 0) {
+        let list = recommends
+          .map(recom => `<li><a data-id="${recom.id}">${recom.title}</a></li>`)
+          .join(' ');
+        html = `<ul>${list}</ul>`;
+      } else {
+        html = '<p>Рекомендованих відео проектів до даного відео не має</p>'
+      }
     } else {
-      html = '<h1>Інформації не має</h1>';
+      html = '<h1>Виникла помилка при отриманні інформації.</h1>';
     };
 
     this
@@ -37,7 +41,7 @@ export default class DetailVideo extends Container {
                   <aside id="recommendation"></aside>
       `;
     } else {
-      html = '<h1>Інформації не має</h1>';
+      html = '<h1>Виникла помилка при отриманні інформації.</h1>';
     }
 
     this
