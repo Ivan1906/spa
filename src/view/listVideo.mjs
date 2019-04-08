@@ -19,12 +19,12 @@ export default class ListVideo extends Container {
       });
   }
 
-  render(movies) {
+  render(videos) {
     let html = '';
-    if (movies != null) {
-      if (movies.length != 0) {
-        let list = recommends
-          .map(recom => `<li><a data-id="${recom.id}">${recom.title}</a></li>`)
+    if (videos != null) {
+      if (videos.length != 0) {
+        let list = videos
+          .map(video => `<li><a data-id="${video.id}" data-type="${video.type}">${video.title}</a></li>`)
           .join(' ');
         html = `<ul>${list}</ul>`;
       } else {

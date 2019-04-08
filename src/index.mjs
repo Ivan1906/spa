@@ -20,7 +20,6 @@ listVideo
   .$el
   .addEventListener('click', async event => {
     if (event.keyVideo != undefined && event.typeVideo != undefined) {
-
       detailVideo.clean();
       let video = await dbApi.getDetailInfoByVideo(event.keyVideo, event.typeVideo);
       detailVideo.render(video);
